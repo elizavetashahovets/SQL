@@ -126,4 +126,12 @@ join product on product.model=pc.model
 where maker in (select distinct maker from product where type='printer') and speed=(select max(speed) from pc where ram=(select min (ram) from pc)) and ram=(select min (ram) from pc)
 
 
+-- 26.
+
+-- 27. Найдите средний размер диска ПК каждого из тех производителей, которые выпускают и принтеры. Вывести: maker, средний размер HD.
+select maker, avg(hd) from pc
+join product on product.model=pc.model
+where maker in(select maker from product where type='printer') 
+group by maker
+
 

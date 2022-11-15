@@ -117,5 +117,13 @@ join product on product.model=laptop.model
 where
 type='laptop' and speed>=750
 
+-- 24. Перечислите номера моделей любых типов, имеющих самую высокую цену по всей имеющейся в базе данных продукции.
+
+
+-- 25. Найдите производителей принтеров, которые производят ПК с наименьшим объемом RAM и с самым быстрым процессором среди всех ПК, имеющих наименьший объем RAM. Вывести: Maker
+select distinct maker from pc 
+join product on product.model=pc.model 
+where maker in (select distinct maker from product where type='printer') and speed=(select max(speed) from pc where ram=(select min (ram) from pc)) and ram=(select min (ram) from pc)
+
 
 

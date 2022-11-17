@@ -137,4 +137,11 @@ group by maker
 -- 28. Используя таблицу Product, определить количество производителей, выпускающих по одной модели.
 select count(maker) from (select maker from product group by maker having count(*)=1) this_table
 
+-- 29. 
+
+-- 30.
+
+-- 31. Для классов кораблей, калибр орудий которых не менее 16 дюймов, укажите класс и страну.
+Select class, country from classes where bore>=16
+
 

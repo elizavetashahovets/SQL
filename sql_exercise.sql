@@ -144,4 +144,10 @@ select count(maker) from (select maker from product group by maker having count(
 -- 31. Для классов кораблей, калибр орудий которых не менее 16 дюймов, укажите класс и страну.
 Select class, country from classes where bore>=16
 
+-- 32. 
+
+-- 33. Укажите корабли, потопленные в сражениях в Северной Атлантике (North Atlantic). Вывод: ship.
+select ship from outcomes
+where result='sunk' and battle='North Atlantic'
+
 

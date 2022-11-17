@@ -134,4 +134,7 @@ join product on product.model=pc.model
 where maker in(select maker from product where type='printer') 
 group by maker
 
+-- 28. Используя таблицу Product, определить количество производителей, выпускающих по одной модели.
+select count(maker) from (select maker from product group by maker having count(*)=1) this_table
+
 

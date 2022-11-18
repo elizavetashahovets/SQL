@@ -150,4 +150,12 @@ Select class, country from classes where bore>=16
 select ship from outcomes
 where result='sunk' and battle='North Atlantic'
 
+-- 34. 
+
+-- 35. В таблице Product найти модели, которые состоят только из цифр или только из латинских букв (A-Z, без учета регистра).
+Вывод: номер модели, тип модели.
+Select model, type from product
+where model not like '%[^0-9]%' or model not like '%[^a-z]%'
+
+
 

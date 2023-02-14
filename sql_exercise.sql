@@ -157,7 +157,6 @@ where result='sunk' and battle='North Atlantic'
 Select model, type from product
 where model not like '%[^0-9]%' or model not like '%[^a-z]%'
 
--- 36.
 
 
 
